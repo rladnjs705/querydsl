@@ -56,7 +56,7 @@ public class QuerydslBasicTest {
 
     @Test
     public void startJPQL() {
-//member1을 찾아라.
+        //member1을 찾아라.
         String qlString =
                 "select m from Member m " +
                         "where m.username = :username";
