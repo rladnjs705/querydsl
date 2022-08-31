@@ -51,8 +51,7 @@ public class MemberTestRepository extends Querydsl4RepositorySupport {
                 );
         return PageableExecutionUtils.getPage(content, pageable, countQuery::fetchOne);
     }
-    public Page<Member> applyPagination(MemberSearchCondition condition,
-                                        Pageable pageable) {
+    public Page<Member> applyPagination(MemberSearchCondition condition,Pageable pageable) {
         return applyPagination(pageable, contentQuery -> contentQuery
                 .selectFrom(member)
                 .leftJoin(member.team, team)
@@ -61,8 +60,7 @@ public class MemberTestRepository extends Querydsl4RepositorySupport {
                         ageGoe(condition.getAgeGoe()),
                         ageLoe(condition.getAgeLoe())));
     }
-    public Page<Member> applyPagination2(MemberSearchCondition condition,
-                                         Pageable pageable) {
+    public Page<Member> applyPagination2(MemberSearchCondition condition,Pageable pageable) {
         return applyPagination(pageable, contentQuery -> contentQuery
                         .selectFrom(member)
                         .leftJoin(member.team, team)
